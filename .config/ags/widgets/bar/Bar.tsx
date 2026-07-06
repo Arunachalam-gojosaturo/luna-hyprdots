@@ -1,0 +1,135 @@
+import App from "ags/gtk4/app";
+import { createComputed, With } from "ags";
+import Workspaces from "./components/Workspaces";
+import Information from "./components/Information";
+import Utilities from "./components/Utilities";
+import {
+  emptyWorkspace,
+  focusedClient,
+  fullscreenClient,
+  globalMargin,
+  globalSettings,
+} from "../../variables";
+import { getMonitorName } from "../../utils/monitor";
+import { WidgetSelector } from "../../interfaces/widgetSelector.interface";
+import { Astal } from "ags/gtk4";
+import { Gdk } from "ags/gtk4";
+import { Gtk } from "ags/gtk4";
+import { RightPanelVisibility } from "../rightPanel/RightPanel";
+import { LeftPanelVisibility } from "../leftPanel/LeftPanel";
+import app from "ags/gtk4/app";
+import { timeout, Timer } from "ags/time";
+import { Window } from "../../utils/window";
+
+export default ({
+  monitor,
+  setup,
+}: {
+  monitor: Gdk.Monitor;
+  setup: (self: Gtk.Window) => void;
+}) => {
+  const monitorName = getMonitorName(monitor)!;
+
+  return (
+    <window
+      gdkmonitor={monitor}
+      name={`bar-${monitorName}`}
+      namespace="bar"
+      class="Bar"
+      application={App}
+      exclusivity={Astal.Exclusivity.EXCLUSIVE}
+      anchor={globalSettings(({ bar }) => {
+        return bar.orientation.value
+          ? Astal.WindowAnchor.TOP |
+              Astal.WindowAnchor.LEFT |
+              Astal.WindowAnchor.RIGHT
+          : Astal.WindowAnchor.BOTTOM |
+              Astal.WindowAnchor.LEFT |
+              Astal.WindowAnchor.RIGHT;
+      })}
+      marginTop={globalSettings(({ bar }) => {
+        return bar.orientation.value ? globalMargin : 0;
+      })}
+      marginBottom={globalSettings(({ bar }) => {
+        return !bar.orientation.value ? globalMargin : 0;
+      })}
+      marginRight={globalMargin}
+      marginLeft={globalMargin}
+      visible={createComputed(() => {
+        return !fullscreenClient() && globalSettings().bar.lock; // Hide when a client is fullscreen
+      })}
+      $={(self) => {
+        setup(self);
+        (self as any).monitorName = monitorName;
+        const windowInstance = new Window();
+        (self as any).barWindow = windowInstance;
+        let hideTimeout: Timer | null = null;
+
+        const motion = new Gtk.EventControllerMotion();
+        motion.connect("leave", () => {
+          if (globalSettings.peek().bar.lock) return;
+
+          hideTimeout = timeout(100, () => {
+            hideTimeout = null;
+            if (
+              !globalSettings.peek().bar.lock &&
+              !windowInstance.popupIsOpen()
+            ) {
+              app.get_window(`bar-${monitorName}`)?.hide();
+            }
+          });
+        });
+
+        motion.connect("enter", () => {
+          if (hideTimeout !== null) {
+            hideTimeout.cancel();
+            hideTimeout = null;
+          }
+        });
+        self.add_controller(motion);
+      }}
+    >
+      <box class={"bar"} spacing={5}>
+        <LeftPanelVisibility />
+
+        <box class="bar-center" hexpand>
+          <With value={globalSettings(({ bar }) => bar.layout)}>
+            {(layout: WidgetSelector[]) => (
+              <centerbox hexpand>
+                {layout
+                  .filter((widget) => widget.enabled)
+                  .map((widget: WidgetSelector, key) => {
+                    const types =
+                      layout.length === 1
+                        ? ["center"]
+                        : layout.length === 2
+                          ? ["start", "end"]
+                          : ["start", "center", "end"];
+                    const type = types[key];
+                    const halign =
+                      type === "start"
+                        ? Gtk.Align.START
+                        : type === "center"
+                          ? Gtk.Align.CENTER
+                          : Gtk.Align.END;
+                    switch (widget.name) {
+                      case "workspaces":
+                        return <Workspaces halign={halign} $type={type} />;
+                      case "information":
+                        return <Information halign={halign} $type={type} />;
+                      case "utilities":
+                        return <Utilities halign={halign} $type={type} />;
+                      default:
+                        return <box />;
+                    }
+                  })}
+              </centerbox>
+            )}
+          </With>
+        </box>
+
+        <RightPanelVisibility />
+      </box>
+    </window>
+  );
+};

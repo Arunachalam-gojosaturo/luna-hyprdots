@@ -1,0 +1,9 @@
+.image {
+  .image-info {
+    margin: 5px;
+
+    .image-info-item {
+      @include button;
+    }
+  }
+}

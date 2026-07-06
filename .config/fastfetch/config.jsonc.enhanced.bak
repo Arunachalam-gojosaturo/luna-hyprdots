@@ -1,0 +1,145 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "padding": {
+      "right": 1
+    }
+  },
+  "display": {
+    "separator": "  "
+  },
+  "modules": [
+    // Top border
+    {
+      "type": "custom",
+      "format": "{#1}╭────────────────────────────────────────────────────────────────────╮"
+    },
+    // Title / User
+    {
+      "type": "title",
+      "key": "│  {#keys} User",
+      "format": "{user-name-colored}\u001b[70G{#1}│"
+    },
+    // Separator line
+    {
+      "type": "custom",
+      "format": "{#1}│\u001b[70G│"
+    },
+    // System Information
+    {
+      "type": "custom",
+      "format": "{#1}│ {#36}󰇄  System Information\u001b[70G{#1}│"
+    },
+    {
+      "type": "os",
+      "key": "│  {#keys}󰍹 OS",
+      "format": "{pretty-name} {arch}\u001b[70G{#1}│"
+    },
+    {
+      "type": "kernel",
+      "key": "│  {#keys}󰒋 Kernel",
+      "format": "{release}\u001b[70G{#1}│"
+    },
+    {
+      "type": "uptime",
+      "key": "│  {#keys}󰅐 Uptime",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m\u001b[70G{#1}│"
+    },
+    {
+      "type": "packages",
+      "key": "│  {#keys}󰏖 Packages",
+      "format": "{all}\u001b[70G{#1}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}│\u001b[70G│"
+    },
+    // Desktop Environment
+    {
+      "type": "custom",
+      "format": "{#1}│ {#36}󰧨  Desktop Environment\u001b[70G{#1}│"
+    },
+    {
+      "type": "de",
+      "key": "│  {#keys}󰧨 DE",
+      "format": "{?pretty-name}{pretty-name} {?version}{version}{?}\u001b[70G{#1}│{?}"
+    },
+    {
+      "type": "custom",
+      "key": "│  {#keys}󱡓 Configuration",
+      "format": "Luna-Hyprdots\u001b[70G{#1}│"
+    },
+    {
+      "type": "wm",
+      "key": "│  {#keys}󱂬 WM",
+      "format": "{pretty-name} {?version}{version}{?} ({protocol-name})\u001b[70G{#1}│"
+    },
+    {
+      "type": "wmtheme",
+      "key": "│  {#keys}󰉼 Theme",
+      "format": "{theme}\u001b[70G{#1}│"
+    },
+    {
+      "type": "display",
+      "key": "│  {#keys}󰹑 Resolution",
+      "format": "{width}x{height} @ {refresh-rate}Hz\u001b[70G{#1}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}│\u001b[70G│"
+    },
+    // Hardware Information
+    {
+      "type": "custom",
+      "format": "{#1}│ {#36}󰻠  Hardware Information\u001b[70G{#1}│"
+    },
+    {
+      "type": "cpu",
+      "key": "│  {#keys}󰻠 CPU",
+      "format": "{name}\u001b[70G{#1}│"
+    },
+    {
+      "type": "gpu",
+      "key": "│  {#keys}󰢮 GPU",
+      "format": "{name}\u001b[70G{#1}│"
+    },
+    {
+      "type": "memory",
+      "key": "│  {#keys}󰍛 Memory",
+      "format": "{used} / {total} ({percentage})\u001b[70G{#1}│"
+    },
+    {
+      "type": "disk",
+      "key": "│  {#keys}󰋊 Disk (/)",
+      "folders": "/",
+      "format": "{size-used} / {size-total} ({size-percentage})\u001b[70G{#1}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}│\u001b[70G│"
+    },
+    // Quick Settings/Commands Info
+    {
+      "type": "custom",
+      "format": "{#1}│  {#36}luna-hyprdots {#}to update Luna-Hyprdots\u001b[70G{#1}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}│  {#36}wallpapers  {#}to install default wallpapers\u001b[70G{#1}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}│  {#36}quickspeed  {#}to test connection\u001b[70G{#1}│"
+    },
+    // Colors
+    {
+      "type": "custom",
+      "format": "{#1}│  {#keys}󰏘 Colors    {#31}● {#32}● {#33}● {#34}● {#35}● {#36}● {#37}● {#39}●\u001b[70G{#1}│"
+    },
+    // Bottom border
+    {
+      "type": "custom",
+      "format": "{#1}╰────────────────────────────────────────────────────────────────────╯"
+    }
+  ]
+}

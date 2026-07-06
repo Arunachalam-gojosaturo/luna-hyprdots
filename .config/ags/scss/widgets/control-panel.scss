@@ -1,0 +1,36 @@
+.control-panel {
+  @include module;
+  padding: 15px;
+
+  min-width: 250px;
+
+  .control-panel-slider {
+    .icon {
+      min-width: 25px;
+      min-height: 25px;
+    }
+    scale {
+      trough {
+        background: $background-transparent;
+        color: black;
+        min-height: 25px;
+        padding: 0px;
+
+        slider {
+          background: transparent;
+          min-height: 0px;
+          min-width: 0px;
+          margin: 0px;
+        }
+
+        highlight {
+          background: $secondary;
+        }
+      }
+
+      &:hover highlight {
+        background: $foreground;
+      }
+    }
+  }
+}

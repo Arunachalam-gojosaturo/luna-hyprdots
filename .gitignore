@@ -1,0 +1,35 @@
+# Ignore all files
+/*
+
+!LICENSE
+
+!.gitignore
+!README.md
+!install.sh
+!DOCUMENTATION/
+
+!.github
+
+!.config/
+.config/*
+
+# Include hyprland config
+!.config/hypr/
+# Include kitty config
+!.config/kitty/
+# include pipwire config
+!.config/pipewire/
+# include ags
+!.config/ags/
+# include fastfetch config
+!.config/fastfetch/
+# wallpapers
+!.config/wallpapers/
+# include starship config
+!.config/starship.toml
+
+# include icons (cursort theme)
+!.icons/
+
+# include zsh config
+!.zshrc
