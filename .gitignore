@@ -25,6 +25,8 @@
 !.config/fastfetch/
 # wallpapers
 !.config/wallpapers/
+# showcase images
+!.config/showcase/
 # include starship config
 !.config/starship.toml
 

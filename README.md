@@ -1,194 +1,86 @@
 <div align="center">
 
-<img src=".github/assets/overview.png" alt="Luna-Hyprdots Overview" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020c14,30:003566,70:0077a8,100:00b4d8&height=220&section=header&text=Luna-Hyprdots&fontSize=70&fontColor=ffffff&fontAlignY=40&desc=⚡%20Modern%20Minimalist%20Hyprland%20Rice%20for%20Arch%20Linux%20⚡&descColor=90e0ef&descAlignY=62&descSize=17&animation=fadeIn" width="100%"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Hyprland-Compositor-00b4d8?style=for-the-badge&logo=wayland&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/Widgets-AGS-00b4d8?style=for-the-badge&logo=gnome&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/License-GPLv3-90e0ef?style=for-the-badge&labelColor=0d1117"/>
+
+</div>
 
 <br/>
 
-# Luna-Hyprdots
+---
 
-**A production-grade Hyprland desktop environment — built from scratch, engineered for daily use.**
+## 🖥️ Desktop Preview
 
-[![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/fMGt4vH6s5)
+Here is a preview of the **Luna-Hyprdots** desktop environment in action, featuring the customized panel widgets, workspaces, and system controls:
 
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white)](https://archlinux.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-blue?style=flat-square)](https://hyprland.org/)
-[![GTK4](https://img.shields.io/badge/GTK4-4A86CF?style=flat-square&logo=gtk&logoColor=white)](https://gtk.org/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org/)
-[![Stars](https://img.shields.io/github/stars/Arunachalam-gojosaturo/luna-hyprdots?style=social)](https://github.com/Arunachalam-gojosaturo/luna-hyprdots/stargazers)
-[![Issues](https://img.shields.io/github/issues/Arunachalam-gojosaturo/luna-hyprdots?style=flat-square)](https://github.com/Arunachalam-gojosaturo/luna-hyprdots/issues)
+<p align="center">
+  <img src=".config/showcase/screenshot_20260706_144759.webp" width="48%" alt="Desktop Overview">
+  <img src=".config/showcase/screenshot_20260706_145420.webp" width="48%" alt="AGS Control Center">
+</p>
+
+<p align="center">
+  <img src=".config/showcase/screenshot_20260706_145425.webp" width="48%" alt="App Launcher">
+  <img src=".config/showcase/screenshot_20260706_145812.webp" width="48%" alt="Terminal and Workspace">
+</p>
+
+---
+
+## ✨ Features
+
+- **Advanced Status Bar & Widgets**: Powered by Aylur's GTK Shell (AGS) for fully customizable status bar panels, app launchers, user profile widgets, and dashboard toggles.
+- **Dynamic Wallpapers & Themes**: Dynamic wallpaper picker with animated transitions using `swww` and automated configuration updates.
+- **Unified Clean Installer**: A simple one-command bash installer script (`install.sh`) that installs dependencies, sets up user permissions, and deploys dotfiles safely.
+- **Minimalist Structure**: Clear separation between components, ensuring configuration files remain clean, manageable, and easy to tweak.
+
+---
+
+## 🚀 Installation
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Arunachalam-gojosaturo/luna-hyprdots.git
+cd luna-hyprdots
+```
+
+### 2️⃣ Run the Installer
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+---
+
+## 🤝 Inspiration & Credits
+
+> [!NOTE]
+> This Hyprland configuration is inspired by the exceptional work and structural organization in [ArchEclipse by AymanLyesri](https://github.com/AymanLyesri/ArchEclipse). Thank you for the contribution to the Linux customization community!
+
+---
+
+## 👤 Author
+
+<div align="center">
+
+<img src="https://github.com/Arunachalam-gojosaturo.png" width="110" style="border-radius:50%; border: 3px solid #00b4d8;"/>
+
+### **Arunachalam**
+*Linux Customization Enthusiast*
+
+[![GitHub](https://img.shields.io/badge/GitHub-Arunachalam--gojosaturo-00b4d8?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117)](https://github.com/Arunachalam-gojosaturo)
+[![Instagram](https://img.shields.io/badge/Instagram-@saturogojo__ac-e1306c?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0d1117)](https://instagram.com/saturogojo_ac)
 
 </div>
 
 ---
 
-## What Is This?
+## 📄 License
 
-Luna-Hyprdots is my personal, battle-tested desktop configuration for Arch Linux + Hyprland. It's a **fully integrated system** that I use daily for coding, trading, gaming, and general productivity.
-
-Every component was written, tuned, and iterated on over real-world use. The result is a cohesive environment where the UI, system utilities, automation scripts, and visual theming all work as a single product — not a patchwork of borrowed configs.
-
-The project spans multiple languages and layers of the stack:
-
-| Layer                              | Technologies                          |
-| ---------------------------------- | ------------------------------------- |
-| **UI / Widgets**                   | GTK4, TypeScript, TSX (Ags framework) |
-| **Automation & Tooling**           | Python 3, Bash                        |
-| **Performance-Critical Utilities** | C                                     |
-| **Compositor**                     | Hyprland (Wayland)                    |
-
----
-
-## Architecture & Technical Highlights
-
-### Dynamic Theming Engine
-
-A custom pipeline generates a full system color scheme from the active wallpaper at runtime using [PyWal](https://github.com/dylanaraps/pywal). Colors propagate automatically to GTK4 widgets, terminal, and all UI components. No manual color editing required — ever.
-
-- Per-workspace wallpaper assignment with both static and animated (video) support
-- Global light/dark mode toggle with instant application across the entire environment
-- Color changes hot-reload without restarting any component
-
-### GTK4 Widget System (TypeScript/TSX)
-
-All shell UI is built with the **Ags GTK4 v3** framework — replacing prior Eww and Ags GTK3 implementations. Widgets are written in TypeScript with TSX, enabling type-safe, component-based UI development that mirrors modern web frontend workflows.
-
-The bar is fully modular — widgets are swappable at runtime. Current slots include:
-
-- Workspace overview with live thumbnails
-- Network bandwidth monitor
-- Weather integration
-- Media player (MPRIS)
-- System tray
-- Notification popups
-- Live crypto price display
-
-### Application Launcher (Rofi Replacement)
-
-A custom-built launcher written in GTK4/TS replacing Rofi entirely, with built-in support for:
-
-- App launching with fuzzy search
-- Clipboard history browser
-- Emoji picker
-- Inline arithmetic evaluation
-- URL forwarding to default browser
-- Arbitrary custom command execution
-
-### Panels
-
-**Right Panel** — Configurable layout with swappable widgets: media player, notification history, calendar, script runner, crypto portfolio viewer, and an anime image viewer powered by the [Danbooru](https://danbooru.donmai.us) and [Gelbooru](https://gelbooru.com) APIs.
-
-**Left Panel** — Power-user tools: an integrated chatbot (multi-API), a booru image browser, a manga reader ([MangaDex](https://mangadex.org/) API, WIP), live keybinds reference, and a Hyprland/Ags settings panel.
-
-### Installer & Updater
-
-The entire configuration deploys via a single command using a Python-based installer that handles dependency resolution, git-based dotfile deployment, and package management automatically. Post-install, the environment stays up to date with a single `luna-hyprdots` command.
-
----
-
-## Workspace Layout
-
-| Workspace      | Assigned Application |
-| -------------- | -------------------- |
-| W2             | Browser              |
-| W4             | Spotify              |
-| W5             | Btop                 |
-| W6             | Discord              |
-| W7             | Steam / Lutris       |
-| W10            | Games                |
-| W1, W3, W8, W9 | General purpose      |
-
-Applications launch automatically into their designated workspaces at login.
-
----
-
-## Installation
-
-**Requirements:** Arch Linux (or Arch-based), Hyprland configured and working, Python 3.
-
-> All other dependencies are installed automatically by the installer.
-
-### One-line Install
-
-```bash
-python3 <(curl -fsSL https://raw.githubusercontent.com/Arunachalam-gojosaturo/luna-hyprdots/refs/heads/master/.config/hypr/maintenance/install.py)
-```
-
-### Update
-
-```bash
-luna-hyprdots
-```
-
----
-
-## Configuration Tips
-
-- **User avatar:** `$HOME/.face.icon`
-- **Wallpaper picker:** `SUPER + W`
-- **Custom wallpapers:** `$HOME/.config/wallpapers/custom`
-- **Custom Hyprland config:** `$HOME/.config/hypr/configs/custom`
-- **Laptop users:** Install `upower` for battery monitoring
-- **Full keybinds reference:** [keybinds.conf](https://github.com/Arunachalam-gojosaturo/luna-hyprdots/blob/master/.config/hypr/configs/keybinds.conf) or via the Left Panel in-environment
-
----
-
-## Roadmap
-
-- [ ] Per-component tutorials and documentation _(in progress)_
-- [ ] Gaming performance optimization _(in progress)_
-- [ ] MangaDex manga reader _(in progress)_
-- [ ] Continuous polish and refinement _(ongoing)_
-
-Issues, suggestions, and feature requests are always welcome — [open one here](https://github.com/Arunachalam-gojosaturo/luna-hyprdots/issues).
-
----
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Arunachalam-gojosaturo/luna-hyprdots&type=Date)](https://star-history.com/#Arunachalam-gojosaturo/luna-hyprdots&Date)
-
----
-
-## Visuals
-
-### Application Launcher
-
-![Application Launcher](.github/assets/app-launcher.png)
-
-### Right Panel — Configurable Layouts
-
-| Layout A                                                  | Layout B                                                  |
-| --------------------------------------------------------- | --------------------------------------------------------- |
-| ![Right Panel 1](.github/assets/right-panel-layout-1.png) | ![Right Panel 2](.github/assets/right-panel-layout-2.png) |
-
-### Left Panel
-
-| Chatbot                                           | Booru Viewer                                    |
-| ------------------------------------------------- | ----------------------------------------------- |
-| ![Chatbot](.github/assets/left-panel-chatbot.png) | ![Booru](.github/assets/left-panel-booru-1.png) |
-
-| Settings                                            | Keybinds                                            |
-| --------------------------------------------------- | --------------------------------------------------- |
-| ![Settings](.github/assets/left-panel-settings.png) | ![Keybinds](.github/assets/left-panel-keybinds.png) |
-
-### Wallpaper Switcher
-
-![Wallpaper Switcher](.github/assets/wallpaper-switcher.png)
-
-### Workspace Overview
-
-![Workspace Overview](.github/assets/workspace-overview.gif)
-
-### Theme Switching
-
-| Dark Mode                              | Light Mode                               |
-| -------------------------------------- | ---------------------------------------- |
-| ![Dark](.github/assets/dark-theme.png) | ![Light](.github/assets/light-theme.png) |
-
-### Keystroke Visualizer _(optional)_
-
-![Keystroke Visualizer](.github/assets/keystroke-visualizer.gif)
-
-### User Panel
-
-![User Panel](.github/assets/user-panel.gif)
+This project is licensed under the **GNU General Public License Version 3 (GPLv3)**. See the [LICENSE](LICENSE) file for details.
