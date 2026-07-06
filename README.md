@@ -33,6 +33,62 @@ Here is a preview of the **Luna-Hyprdots** desktop environment in action, featur
 
 ---
 
+## 🖼️ Wallpapers Gallery
+
+A collection of high-resolution minimalist and anime wallpapers included in this setup:
+
+<table>
+  <tr>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper.jpg" width="100%"><br><sub>Minimalist Landscape</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(1).jpg" width="100%"><br><sub>Sci-Fi Tech</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(2).jpg" width="100%"><br><sub>Cyberpunk Night</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(3).jpg" width="100%"><br><sub>Neon Street</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12464613-asa-manga-desktop-wallpapers.jpg" width="100%"><br><sub>Asa Mitaka</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12684531-chainsaw-man-girls-wallpapers.jpg" width="100%"><br><sub>Chainsaw Man Girls</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp13059159-yoru-chainsaw-man-wallpapers.png" width="100%"><br><sub>Yoru (War Devil)</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12422026-war-devil-wallpapers.jpg" width="100%"><br><sub>War Devil Dark</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/__world_is_fleeting_as_foam_nikki_and_1_more_drawn_by_xxyt_xx__5f9486e7eac9a0da590f13a6cf45dab6.jpg" width="100%"><br><sub>World Is Fleeting</sub></td>
+  </tr>
+</table>
+
+---
+
+## 📂 Repository Structure
+
+The full directory layout of the **Luna-Hyprdots** project is organized as follows:
+
+```txt
+luna-hyprdots/
+├── install.sh                  ← Unified Bash installation wizard
+├── LICENSE                     ← GNU GPLv3 License text
+├── README.md                   ← Project documentation
+├── .zshrc                      ← Pre-configured Zsh shell environment
+├── .gitignore                  ← Git file inclusion/exclusion rules
+├── 📁 DOCUMENTATION/           ← Modular manuals & troubleshooting guides
+│   ├── README.md
+│   ├── 00_DOCUMENTATION.md
+│   ├── 01_ANIMATIONS.md
+│   ├── 02_KEYBINDINGS.md
+│   └── ...
+├── 📁 .icons/                  ← Cursor icons (Phinger dark/light themes)
+└── 📁 .config/                 ← Configuration files (copied to ~/.config/)
+    ├── starship.toml           ← Starship prompt configuration
+    ├── 📁 ags/                 ← Aylur's GTK Shell (bars, widgets, panels)
+    ├── 📁 cava/                ← Audio visualizer configurations
+    ├── 📁 fastfetch/           ← Fastfetch desktop details config
+    ├── 📁 hypr/                ← Hyprland, Hyprlock, and Hyprpaper setup
+    ├── 📁 kitty/               ← Kitty terminal emulator profile
+    ├── 📁 pipewire/            ← Audio management routing configurations
+    ├── 📁 showcase/            ← Webp screenshots for GitHub preview
+    └── 📁 wallpapers/          ← Wallpapers directory (SFW images)
+```
+
+---
+
 ## ✨ Features
 
 - **Advanced Status Bar & Widgets**: Powered by Aylur's GTK Shell (AGS) for fully customizable status bar panels, app launchers, user profile widgets, and dashboard toggles.
