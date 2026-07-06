@@ -100,13 +100,34 @@ luna-hyprdots/
 
 ## 🚀 Installation
 
-### 1️⃣ Clone the Repository
+### Method 1: Arch User Repository (AUR) - Recommended
+Installing via the AUR automatically handles all system dependencies (Hyprland, AGS, etc.) for a cleaner installation process.
+
+**1️⃣ Install the package**
+```bash
+yay -S luna-hyprdots
+```
+
+**2️⃣ Apply the configuration**
+You can either manually copy the files, or run the provided setup wizard to handle backups, SDDM themes, and shell changes:
+
+```bash
+# Copy the files locally and run the automated installer
+cp -r /usr/share/luna-hyprdots ~/.luna-hyprdots-setup
+cd ~/.luna-hyprdots-setup
+./install.sh
+```
+
+### Method 2: Manual Git Clone
+If you prefer not to use the AUR package, you can clone and install manually.
+
+**1️⃣ Clone the Repository**
 ```bash
 git clone https://github.com/Arunachalam-gojosaturo/luna-hyprdots.git
 cd luna-hyprdots
 ```
 
-### 2️⃣ Run the Installer
+**2️⃣ Run the Installer**
 ```bash
 chmod +x install.sh
 ./install.sh
