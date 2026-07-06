@@ -39,19 +39,19 @@ A collection of high-resolution minimalist and anime wallpapers included in this
 
 <table>
   <tr>
-    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper.jpg" width="100%"><br><sub>Minimalist Landscape</sub></td>
-    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(1).jpg" width="100%"><br><sub>Sci-Fi Tech</sub></td>
-    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(2).jpg" width="100%"><br><sub>Cyberpunk Night</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/1335950.png" width="100%"><br><sub>Wallpaper 1</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/1336073.png" width="100%"><br><sub>Wallpaper 2</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/1336102.png" width="100%"><br><sub>Wallpaper 3</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wallpaperflare.com_wallpaper(3).jpg" width="100%"><br><sub>Neon Street</sub></td>
+    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/1402520.jpg" width="100%"><br><sub>Wallpaper 4</sub></td>
     <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12464613-asa-manga-desktop-wallpapers.jpg" width="100%"><br><sub>Asa Mitaka</sub></td>
     <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12684531-chainsaw-man-girls-wallpapers.jpg" width="100%"><br><sub>Chainsaw Man Girls</sub></td>
   </tr>
   <tr>
     <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp13059159-yoru-chainsaw-man-wallpapers.png" width="100%"><br><sub>Yoru (War Devil)</sub></td>
     <td align="center"><img src=".config/wallpapers/defaults/images_sfw/wp12422026-war-devil-wallpapers.jpg" width="100%"><br><sub>War Devil Dark</sub></td>
-    <td align="center"><img src=".config/wallpapers/defaults/images_sfw/__world_is_fleeting_as_foam_nikki_and_1_more_drawn_by_xxyt_xx__5f9486e7eac9a0da590f13a6cf45dab6.jpg" width="100%"><br><sub>World Is Fleeting</sub></td>
+    <td></td>
   </tr>
 </table>
 
